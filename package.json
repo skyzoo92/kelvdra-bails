@@ -1,6 +1,6 @@
 {
   "name": "kelvdra/bails",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "WhatsApp API",
   "keywords": [
     "whatsapp",
@@ -53,6 +53,7 @@
     "libphonenumber-js": "^1.10.20",
     "libsignal": "github:adiwajshing/libsignal-node",
     "music-metadata": "^7.12.3",
+    "mysql2": "latest",
     "node-cache": "^5.1.2",
     "pino": "^7.0.0",
     "protobufjs": "^7.2.4",
