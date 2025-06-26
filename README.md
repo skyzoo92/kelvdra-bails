@@ -57,6 +57,7 @@ const { default: makeWASocket } = require("@kelvdra/baileys")
         - [Mention Status](#mention-status)
         - [Result Poll From Newsletter](#result-poll-from-newsletter)
         - [SendAlbumMessage](#send-album-message)
+        - [SendMessage Carousel With Product](#sendMessage-Carousel-With-Product)
         - [Interactive Response](#interactive-response)
         - [Request Payment](#request-payment)
         - [Event Message](#event-message)
@@ -604,6 +605,70 @@ await sock.sendMessage(
    },
    { quoted : message }
 )
+```
+
+### sendMessage Carousel With Product
+```javascript
+> await conn.sendMessage(m.chat, {
+  carouselMessage: {
+    caption: '📋 Silakan pilih:',
+    footer: 'Hydra Carousel',
+    cards: [
+      {
+        headerTitle: 'Hydra',
+        headerSubtitle: 'Owner',
+        imageUrl: logo.thumb,
+        productTitle: '👑 Owner Bot',
+        productDescription: 'Hubungi Owner langsung',
+        url: 'https://t.me/ownerhydra',
+        bodyText: 'Chat langsung dengan tombol di bawah.',
+        buttons: [
+          {
+            name: 'cta_call',
+            params: {
+              display_text: 'Call Owner',
+              phone_number: '+6287784901856'
+            }
+          },
+          {
+            name: 'cta_url',
+            params: {
+              display_text: 'Chat Telegram',
+              url: 'https://t.me/ownerhydra',
+              merchant_url: 'https://t.me/ownerhydra'
+            }
+          }
+        ]
+      },
+      {
+        headerTitle: 'Rapthalia',
+        headerSubtitle: 'Bot',
+        imageUrl: logo.thumb,
+        productTitle: '🤖 Bot Rapthalia',
+        productDescription: 'Bot yang bisa kamu sewa',
+        url: 'https://wa.me/6281234567890',
+        bodyText: 'Klik tombol untuk interaksi bot.',
+        buttons: [
+          {
+            name: 'cta_call',
+            params: {
+              display_text: 'Call Bot',
+              phone_number: '+6281234567890'
+            }
+          },
+          {
+            name: 'cta_url',
+            params: {
+              display_text: 'Chat Bot',
+              url: 'https://wa.me/6281234567890',
+              merchant_url: 'https://wa.me/6281234567890'
+            }
+          }
+        ]
+      }
+    ]
+  }
+}, { quoted: m })
 ```
 
 #### Interactive
